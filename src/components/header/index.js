@@ -9,11 +9,11 @@ const Header = () => {
             <p>Advanced search</p>
             </div>
             <div className='header-child header-right'>
-                <a href='#' className='menu-item active'>Target</a>
-                <a href='#' className='menu-item'>Engage</a>
-                <a href='#' className='menu-item'>Deals</a>
-                <a href='#' className='menu-item'>Analyze</a>
-                <a href='#' className='menu-item'>Improve</a>
+                <button className='menu-item active'>Target</button>
+                <button className='menu-item'>Engage</button>
+                <button className='menu-item'>Deals</button>
+                <button className='menu-item'>Analyze</button>
+                <button className='menu-item'>Improve</button>
             </div>
         </header>
     )
