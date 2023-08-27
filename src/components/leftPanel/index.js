@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 import "./style.css";
 
-const LeftPanel = ({triggerNewRequest}) => {
+const LeftPanel = ({ chatMessages, triggerNewRequest }) => {
 
+    // const greetingMessage = { text: "Hello there, please type your message" };
     const [isLeftTabActive, setIsLeftTabActive] = useState(true);
-    const [chatMessages, setChatMessages] = useState([]);
-    const [typedMessage,setTypedMessage] = useState('');
+    // const [chatMessages, setChatMessages] = useState([greetingMessage]);
+    const [typedMessage, setTypedMessage] = useState('');
 
     const handleTabButtonClick = () => {
         setIsLeftTabActive((prev) => !prev)
@@ -16,12 +17,11 @@ const LeftPanel = ({triggerNewRequest}) => {
 
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            setChatMessages(prev => [...prev,typedMessage]);
             triggerNewRequest(typedMessage);
             setTypedMessage("");
         }
-      };
-    
+    };
+
 
     const renderFilterFields = () => (
         <div className="filter-container">
@@ -47,7 +47,7 @@ const LeftPanel = ({triggerNewRequest}) => {
             <div className="chat-messages">
                 {
                     chatMessages.map((message, index) => (
-                        <p className="bubble">{message}</p>
+                        <p key={index} className={`${message.style}`}>{message.text}</p>
                     ))
                 }
 
