@@ -63,6 +63,7 @@
 }
 
 .chat-messages{
+    overflow: scroll;
     height: 65vh;
     margin-left: 1.2rem;
 }

@@ -36,7 +36,7 @@ function App() {
       sortable: true
     }, {
       name: 'Created Date',
-      selector: row => row.createdAtDate,
+      selector: row => row.createdAt,
       sortable: true
     }, {
       name: "Intent Level",
@@ -96,6 +96,7 @@ function App() {
 
   const handleReset = () => {
     fetchSomeData();
+    setChatMessages([greetingMessage])
   }
 
   return (
