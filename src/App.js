@@ -11,46 +11,56 @@ function App() {
   useEffect(() => {
     const fetchSomeData = async () => {
       try {
-        const result = await fetchApi('https://dummyjson.com/products');
+        const result = await fetchApi('http://localhost:4000/companiesData', 'post', {
+          userText: ''
+        });
 
         const columnsData = [
             {
-                name: 'Brand',
-                selector: row => row.brand,
+                name: 'Company Name',
+                selector: row => row.companyName,
                 sortable:true
             },
             {
-                name: 'Category',
-                selector: row => row.category,
+                name: 'Company Industry',
+                selector: row => row.companyIndustry,
                 sortable:true
             },{
-                name: 'Description',
-                selector: row => row.description,
+                name: 'Company Revenue',
+                selector: row => row.companyRevenue,
                 sortable:true
             },{
-                name: 'Discount Percentage',
-                selector: row => row.discountPercentage,
+                name: 'Company Employees',
+                selector: row => row.companyEmployees,
                 sortable:true
             },{
-                name: 'Price',
-                selector: row => row.price,
+                name: 'Company Country',
+                selector: row => row.companyCountry,
                 sortable:true
             },{
-                name: 'Rating',
-                selector: row => row.rating,
+                name: 'Created Date',
+                selector: row => row.createdAtDate,
                 sortable:true
             },{
-                name:"Stock",
-                selector: row => row.stock,
+                name:"Intent Level",
+                selector: row => row.intentLevel,
                 sortable:true
             },{
-                name:"title",
-                selector: row => row.title,
+                name:"URL Visited",
+                selector: row => row.urlVisited,
                 sortable:true
-            }
+            },{
+              name:"IP Location",
+              selector: row => row.ipLocation,
+              sortable:true
+          },{
+            name:"IP Type",
+            selector: row => row.ipType,
+            sortable:true
+        }
         ];
         setColumns(columnsData);
-        setData(result.products);
+        setData(result);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -63,8 +73,10 @@ function App() {
   const [data,setData] = useState([]);
   const handleNewRequest = async (keyValue) => {
     try {
-      const result = await fetchApi(`https://dummyjson.com/products/${keyValue}`);
-      setData([result]);
+      const result = await fetchApi(`http://localhost:4000/companiesData`, 'post', {
+        userText: keyValue
+      });
+      setData(result);
     } catch (error) {
       console.error('Error adding data:', error);
     }
