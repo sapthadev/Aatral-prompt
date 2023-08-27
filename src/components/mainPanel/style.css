@@ -1,0 +1,12 @@
+.main-panel{
+    display: flex;
+    /* border: 1px solid; */
+    flex:4;
+    flex-direction: column;
+    height: 85vh;
+    /* width: 100%; */
+    min-width: 500px;
+    margin: .5rem;
+    border-radius: 15px;
+    background-color: #fff;
+}
