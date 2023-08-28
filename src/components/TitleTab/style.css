@@ -11,6 +11,10 @@
 .title-child{
     display: flex;
     align-items: center;
+
+    .data-count {
+        font-weight: 600;
+    }
 }
 
 .title-child-left{

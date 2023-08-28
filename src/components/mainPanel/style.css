@@ -9,4 +9,15 @@
     margin: .5rem;
     border-radius: 15px;
     background-color: #fff;
+
+
+    .rdt_TableHead {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .rdt_TableBody {
+        height: 75vh;
+        overflow-y: scroll;
+    }
 }

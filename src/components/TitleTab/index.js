@@ -1,5 +1,5 @@
 import "./style.css";
-const TitleTab = ({onReset}) => {
+const TitleTab = ({data = [], onReset}) => {
     return (
         <div className="title-tab">
             <div className="title-child title-child-left">
@@ -8,6 +8,7 @@ const TitleTab = ({onReset}) => {
                 <p>Analytics</p>
             </div>
             <div className="title-child title-child-right">
+                <div className="data-count">{data?.length || 0} Records Found</div>
                 <button className="button-style secondary">My searches</button>
                 <button className="button-style secondary">Save Search</button>
                 <button onClick={onReset} className="button-style secondary">Reset Filter</button>

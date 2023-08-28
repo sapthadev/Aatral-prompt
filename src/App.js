@@ -102,7 +102,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <TitleTab onReset={handleReset}/>
+      <TitleTab data={data} onReset={handleReset} />
       <div className="panel-container">
         <LeftPanel chatMessages={chatMessages} triggerNewRequest={handleNewRequest} />
         <MainPanel columns={columnsData} data={data} />
