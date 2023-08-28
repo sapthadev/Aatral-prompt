@@ -14,6 +14,10 @@ const Header = () => {
                 <button className='menu-item'>Deals</button>
                 <button className='menu-item'>Analyze</button>
                 <button className='menu-item'>Improve</button>
+
+                <div className='avatar'>
+                <p>ZI</p>
+                </div>
             </div>
         </header>
     )
